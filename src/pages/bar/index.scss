@@ -13,6 +13,7 @@
   border: solid #008cff 2px;
   border-radius: 30px;
   box-shadow: 0px 10px 12px rgb(0, 0, 0);
+  overflow-x: hidden;
 
   h1 {
     font-size: 70px;
@@ -89,6 +90,48 @@
     label {
       font-size: 25px;
       font-weight: 600;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Bar-container {
+    flex-direction: column;
+    margin: 20% 5% 20% 5%;
+    height: max-content;
+
+    h1 {
+      font-size: 50px;
+      padding: 5px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .bar-bebida-container {
+      width: 390px;
+
+      input {
+        width: 210px;
+      }
+
+      label {
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+
+    .bebida-dados-container {
+      width: 300px;
+      h2{
+        font-size: 30px;
+        padding-bottom: 10px;
+      }
+      label {
+        font-size: 20px;
+        font-weight: 600;
+      }
     }
   }
 }
