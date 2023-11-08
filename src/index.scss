@@ -2,6 +2,7 @@
     color: #008cff;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Isso ajuda a incluir padding e bordas no cálculo de largura/altura */
 }
 
 body {
@@ -9,4 +10,8 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+    overflow-x: hidden;
+    min-height: 100vh;
+ }
+ 
+ 

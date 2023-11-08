@@ -7,3 +7,11 @@
   bottom: 0;
   width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .Header {
+      flex-direction: column;
+
+  }
+}

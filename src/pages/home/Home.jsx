@@ -29,6 +29,7 @@ const Home = () => {
   };
 
   return (
+    <div className="home">
     <div className="home-container">
       <h1>Bem-vindo ao BarSystem</h1><br />
       <p> Cadastre as comandas aqui</p>
@@ -64,6 +65,7 @@ const Home = () => {
           <button type="submit">Cadastrar</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };

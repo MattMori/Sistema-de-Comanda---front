@@ -12,6 +12,7 @@ const Header = () => {
         <Link to={"/Caixa"}><p>Caixa de Saida</p></Link>
         <Link to={"/CadastroBebida"}><p>Cadastro de Bebidas</p></Link>
       </div>
+      
     </header>
         );
 };
