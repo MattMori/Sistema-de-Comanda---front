@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3500/";
+const BASE_URL = "https://sistema-de-comanda-back.vercel.app/";
 
 export class SistemaService {
 
