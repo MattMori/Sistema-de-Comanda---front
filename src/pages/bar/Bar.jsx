@@ -7,7 +7,8 @@ const Bar = () => {
     const [numeroDaComanda, setNumeroDaComanda] = useState("");
     const [bebida, setBebida] = useState({
         nomeDaBebida: "",
-        valorDaBebida: 0
+        valorDaBebida: 0,
+        Ingredientes: ""
     });
 
     const handleKeyDown = async (e) => {
@@ -25,7 +26,9 @@ const Bar = () => {
             console.error("Erro ao buscar bebida pelo código:", error);
             setBebida({
                 nomeDaBebida: "",
-                valorDaBebida: 0
+                valorDaBebida: 0,
+                Ingredientes: ""
+
             });
         }
     };
@@ -87,6 +90,10 @@ const Bar = () => {
                 <br />
                 <label>
                     Valor da Bebida: {bebida && bebida.valorDaBebida ? bebida.valorDaBebida : "Valor não disponível"}
+                </label>
+                <br />
+                <label>
+                    Ingredientes: {bebida && bebida.Ingredientes ? bebida.Ingredientes : "Ingrediente não disponível"}
                 </label>
             </div>
         </div>
