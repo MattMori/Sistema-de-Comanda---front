@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SistemaService } from '../../api/sistemaService';
 import "./index.scss";
 

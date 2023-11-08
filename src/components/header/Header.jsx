@@ -9,8 +9,8 @@ const Header = () => {
       <div className='rotas'>
         <Link to={"/CadastroClientes"}><p>Cadastro de Clientes</p></Link>
         <Link to={"/Bar"}><p>Bar</p></Link>
-        <Link to={"/Caixa"}><p>Caixa de saida</p></Link>
-        <Link to={"/CadastroBebida"}><p>cadastro de produtos</p></Link>
+        <Link to={"/Caixa"}><p>Caixa de Saida</p></Link>
+        <Link to={"/CadastroBebida"}><p>Cadastro de Bebidas</p></Link>
       </div>
     </header>
         );

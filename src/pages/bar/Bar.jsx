@@ -39,6 +39,12 @@ const Bar = () => {
         try {
             const AdicionarBebida = await SistemaService.adicionarBebida(numeroDaComanda, codigoDaBebida);
             console.log("Resposta do servidor (Adicionar Bebida):", AdicionarBebida.data);
+            alert("Bebida Adicionada com sucesso")
+            setBebida({
+                nomeDaBebida: "",
+                valorDaBebida: 0,
+                Ingredientes: ""
+            });
         } catch (error) {
             console.error("Erro ao Adicionar bebida:", error);
         }

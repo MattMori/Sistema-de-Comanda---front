@@ -25,6 +25,14 @@ const CadastroClientes = () => {
         try {
             const response = await SistemaService.criarOuEditarCliente(cliente);
             console.log("Resposta do servidor:", response.data);
+            alert("Cliente cadastrado com sucesso")
+            setCliente({
+                nomeDoCliente: "",
+                dataDeNascimento: "",
+                telefone: "",
+                email: "",
+                cpf: "",
+            })
         } catch (error) {
             console.error("Erro ao cadastrar o cliente:", error);
         }
@@ -98,7 +106,7 @@ const CadastroClientes = () => {
                             required
                         />{" "}
                     </label><br />
-                    
+
                     <button type="submit">Cadastrar</button>
                 </form>
             </div>

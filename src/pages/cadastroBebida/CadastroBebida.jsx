@@ -24,6 +24,13 @@ const CadastroBebida = () => {
         try {
             const response = await SistemaService.criarBebida(bebida);
             console.log("Resposta do servidor:", response.data);
+            alert("bebida cadastrada com sucesso")
+            setBebida({
+                nomeDaBebida: "",
+                codigoDaBebida: "",
+                valorDaBebida: "",
+                Ingredientes: "",
+            });
         } catch (error) {
             console.error("Erro ao cadastrar a bebida:", error);
         }
