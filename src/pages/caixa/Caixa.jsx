@@ -63,12 +63,11 @@ const CaixaSaida = () => {
     <div className="caixa-container">
       <div className="consulta-container">
         <h1>Caixa - BarSystem</h1>
-        <p>Consulte as informações <br/> da comanda aqui</p>
+        <p>Consulte as informações <br /> da comanda aqui</p>
         <form onSubmit={handleSubmit}>
           <label>
             Número da Comanda:
             <input
-              className="outros"
               type="text"
               name="numeroDaComanda"
               placeholder="Digite o número da comanda"
