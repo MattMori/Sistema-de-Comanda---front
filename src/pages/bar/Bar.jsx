@@ -45,6 +45,11 @@ const Bar = () => {
         }
     };
 
+    const handleKeyDown = async (e) => {
+        if (e.key === 'Enter') {
+            await fetchBebida();
+        }
+    };
     return (
         <div className="Bar-container">
             <div className="bar-bebida-container">
@@ -55,16 +60,17 @@ const Bar = () => {
                         Código da Bebida:
                         <br />
                         <div className="input-group">
-                        <input
-                            className="outros"
-                            type="Number"
-                            name="codigoDaBebida"
-                            placeholder="Digite o Código da bebida aqui"
-                            value={codigoDaBebida}
-                            onChange={(e) => setCodigoDaBebida(e.target.value)}
-                            required
-                        />
-                        <FaSearch className="icon-search" onClick={fetchBebida} />
+                            <input
+                                className="outros"
+                                type="Number"
+                                name="codigoDaBebida"
+                                placeholder="Digite o Código da bebida aqui"
+                                value={codigoDaBebida}
+                                onChange={(e) => setCodigoDaBebida(e.target.value)}
+                                onKeyDown={handleKeyDown}
+                                required
+                            />
+                            <FaSearch className="icon-search" onClick={fetchBebida} />
                         </div>
                     </label>
                     <br />
