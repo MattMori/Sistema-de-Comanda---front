@@ -42,14 +42,16 @@ const CadastroClientes = () => {
 
     return (
         <div className="clientes-container">
-            <h1>Cadastro de Clientes</h1>
-            <p>insira os dados para realizar o cadastro do clientes</p>
+            <div>
+                <h1>Cadastro de Clientes</h1>
+                <p>insira os dados para realizar o cadastro do clientes</p>
+            </div>
             <div className="cadastro-container">
                 <form onSubmit={handleSubmit}>
                     <label>
                         Nome Completo:
+                        <br />
                         <input
-                            className="NomeCliente"
                             type="text"
                             name="nomeDoCliente"
                             placeholder="Digite o Nome do cliente aqui"
@@ -57,22 +59,25 @@ const CadastroClientes = () => {
                             onChange={handleChange}
                             required
                         />
-                    </label>{" "} <br />
+                    </label>
+                    <br />
                     <label>
                         Data de Nascimento:
+                        <br />
                         <input
+                            className="dataNascimento"
                             type="date"
                             name="dataDeNascimento"
                             value={cliente.dataDeNascimento}
                             onChange={handleChange}
                             required
                         />
-                    </label>{" "}
-
+                    </label>
+                    <br />
                     <label>
                         Email:
+                        <br />
                         <input
-                            className="Email"
                             type="email"
                             name="email"
                             placeholder="Digite o Email do cliente aqui"
@@ -80,11 +85,12 @@ const CadastroClientes = () => {
                             onChange={handleChange}
                             required
                         />
-                    </label> <br />
-                    <label>{" "}
+                    </label>
+                    <br />
+                    <label>
                         CPF:
+                        <br />
                         <input
-                            className="outros"
                             type="text"
                             name="cpf"
                             placeholder="Digite o CPF do cliente aqui"
@@ -94,17 +100,18 @@ const CadastroClientes = () => {
                         />
 
                     </label>
+                    <br />
                     <label>
                         Telefone:
+                        <br />
                         <input
-                            className="outros"
                             type="tel"
                             name="telefone"
                             placeholder="Digite o telefone do Cliente aqui"
                             value={cliente.telefone}
                             onChange={handleChange}
                             required
-                        />{" "}
+                        />
                     </label><br />
 
                     <button type="submit">Cadastrar</button>

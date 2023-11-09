@@ -20,7 +20,7 @@
     }
 
     p {
-        font-size: 20px;        
+        font-size: 20px;
 
     }
 
@@ -96,6 +96,7 @@
     .dados {
         padding-top: 1rem;
         display: flex;
+
         .comanda-info {
 
             width: 300px;
@@ -108,5 +109,46 @@
 
 
         }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .caixa-container {
+        flex-direction: column;
+        margin: 20% 5% 20% 5%;
+        height: max-content;
+        text-align: center;
+        align-items: center;
+
+
+        h1 {
+            font-size: 50px;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .consulta-container {
+            width: 390px;
+            flex-direction: column;
+            padding: 10px;
+
+            input {
+                width: 180px;
+            }
+
+            label {
+                font-size: 20px;
+                font-weight: 800;
+
+            }
+        }
+
+    }
+
+    .dados {
+        flex-direction: column;
     }
 }

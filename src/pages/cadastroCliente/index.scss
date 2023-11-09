@@ -1,6 +1,5 @@
 .clientes-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 5%;
     margin-bottom: 5%;
@@ -13,25 +12,19 @@
     border: solid #008cff 2px;
     border-radius: 30px;
     box-shadow: 0px 10px 12px rgb(0, 0, 0);
-    color: white;
+    padding-left: 90px;
     overflow-x: hidden;
 
 
+
     h1 {
-
-        font-size: 70px;
-        padding-top: 5rem;
-    }
-
-    p {
-        font-size: 20px;
+        font-size: 80px;
     }
 
     .cadastro-container {
-        width: 900px;
+        width: 600px;
         padding-top: 20px;
         text-align: center;
-
 
 
         label {
@@ -40,6 +33,7 @@
         }
 
         input {
+            text-align: center;
             min-height: 30px;
             max-height: 100px;
             border-radius: 5px;
@@ -48,21 +42,12 @@
             margin: 10px;
             padding: 5px;
             border-radius: 15px;
+            width: 18rem;
+            border: solid #008cff 2px;
+        }
+
+        .dataNascimento {
             width: 120px;
-
-
-        }
-
-        .NomeCliente {
-            width: 70%;
-        }
-
-        .Email {
-            width: 40%;
-        }
-
-        .outros {
-            width: 35%;
         }
 
         button {
@@ -72,7 +57,7 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            margin-top: 50px;
+            margin-top: 30px;
             transition: background-color 0.3s ease;
             border: solid #008cff 2px;
             transition: transform 0.4s ease-in-out;
@@ -97,6 +82,10 @@
         flex-direction: column;
         margin: 20% 5% 20% 5%;
         height: max-content;
+        text-align: center;
+        padding: 10px;
+
+
 
         h1 {
             font-size: 50px;
@@ -110,29 +99,18 @@
         .cadastro-container {
             width: 390px;
             flex-direction: column;
+            padding: 20px;
 
             input {
-                width: 210px;
+                width: 15rem;
             }
 
             label {
-                font-size: 20px;
+                font-size: 18px;
                 font-weight: 800;
+
             }
         }
 
-        .bebida-dados-container {
-            width: 300px;
-
-            h2 {
-                font-size: 30px;
-                padding-bottom: 10px;
-            }
-
-            label {
-                font-size: 20px;
-                font-weight: 600;
-            }
-        }
     }
 }

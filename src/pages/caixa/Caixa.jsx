@@ -109,7 +109,7 @@ const CaixaSaida = () => {
             {comandaInfo.bebidas?.map((bebida, index) => (
               <li key={index}>{bebida.nomeDaBebida} - R$ {bebida.valorDaBebida}</li>
             ))}
-            <label>Valor da Entrada: {ValorEntrada}</label>
+            <label>Valor da Entrada - R$ {ValorEntrada}</label>
           </ul>
           <p>Valor Total: R$ {comandaInfo.totalDaComanda.toFixed(2)}</p>
         </div>

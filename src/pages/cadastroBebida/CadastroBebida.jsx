@@ -40,7 +40,7 @@ const CadastroBebida = () => {
         <div className="bebida-container">
         <div>
             <h1>Cadastro de bebidas</h1>
-            <h2>insira os dados da bebida que você quer cadastrar</h2>
+            <p>insira os dados da bebida que você quer cadastrar</p>
             </div>
             <div className="cadastro-container">
 

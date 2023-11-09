@@ -1,6 +1,6 @@
 .bebida-container {
     display: flex;
-     align-items: center;
+    align-items: center;
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 20%;
@@ -17,8 +17,8 @@
 
     h1 {
         font-size: 80px;
-     }
- 
+    }
+
     .cadastro-container {
         width: 600px;
         padding-top: 20px;
@@ -34,7 +34,7 @@
         }
 
         label {
-                font-size: 25px;
+            font-size: 25px;
             font-weight: 600;
             padding-bottom: 5rem;
 
@@ -78,4 +78,41 @@
         }
     }
 
+}
+
+@media only screen and (max-width: 600px) {
+    .bebida-container {
+        flex-direction: column;
+        margin: 20% 5% 20% 5%;
+        height: max-content;
+        padding: 10px;
+
+
+        h1 {
+            font-size: 45px;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .cadastro-container {
+            width: 390px;
+
+            input {
+                width: 210px;
+            }
+
+            label {
+                font-size: 20px;
+                font-weight: 800;
+            }
+
+            button {
+                margin: 20px;
+
+            }
+        }
+    }
 }
