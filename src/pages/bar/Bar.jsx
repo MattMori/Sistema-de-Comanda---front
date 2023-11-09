@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SistemaService } from '../../api/sistemaService';
+import { FaSearch } from 'react-icons/fa';
 import "./index.scss";
 
 const Bar = () => {
@@ -10,12 +11,6 @@ const Bar = () => {
         valorDaBebida: 0,
         Ingredientes: ""
     });
-
-    const handleKeyDown = async (e) => {
-        if (e.key === 'Enter') {
-            await fetchBebida(); // Chama a função para buscar a bebida quando o usuário aperta "Enter"
-        }
-    };
 
     const fetchBebida = async () => {
         try {
@@ -59,6 +54,7 @@ const Bar = () => {
                     <label>
                         Código da Bebida:
                         <br />
+                        <div className="input-group">
                         <input
                             className="outros"
                             type="Number"
@@ -66,9 +62,10 @@ const Bar = () => {
                             placeholder="Digite o Código da bebida aqui"
                             value={codigoDaBebida}
                             onChange={(e) => setCodigoDaBebida(e.target.value)}
-                            onKeyDown={handleKeyDown} // Adiciona o evento onKeyDown para capturar a tecla "Enter"
                             required
                         />
+                        <FaSearch className="icon-search" onClick={fetchBebida} />
+                        </div>
                     </label>
                     <br />
                     <label>

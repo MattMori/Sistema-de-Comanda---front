@@ -27,6 +27,7 @@
     font-size: 25px;
   }
 
+
   .bar-bebida-container {
     width: 900px;
     padding-top: 20px;
@@ -40,6 +41,7 @@
     }
 
     input {
+      text-align: center;
       min-height: 30px;
       max-height: 100px;
       border-radius: 5px;
@@ -48,8 +50,26 @@
       margin: 10px;
       padding: 5px;
       border-radius: 15px;
-      width: 50%;
+      width: 40%;
 
+
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 25px;
+
+      .icon-search {
+        cursor: pointer;
+        filter: drop-shadow(0px 5px 3px rgb(0, 0, 0));
+        transition: transform 0.3s ease;
+      }
+
+      .icon-search:hover {
+        transform: translateY(-5px);
+      }
 
     }
 
