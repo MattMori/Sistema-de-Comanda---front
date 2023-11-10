@@ -1,109 +1,111 @@
-     .home-container {
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
-       margin-top: 5%;
-       margin-bottom: 5%;
-       margin-left: 20%;
-       margin-right: 20%;
-       height: 63vh;
-       text-align: center;
-       font-family: Arial, sans-serif;
-       background-color: #000000ad;
-       border: solid rgb(0, 140, 255) 2px;
-       border-radius: 30px;
-       box-shadow: 0px 10px 12px rgb(0, 0, 0);
-       overflow-x: hidden;
+@import url('../../index.scss');
 
-       h1 {
-         font-size: 70px;
-       }
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 63vh;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #000000ad;
+  border: solid var(--Blue) 2px;
+  border-radius: 30px;
+  box-shadow: 0px 10px 12px rgb(0, 0, 0);
+  overflow-x: hidden;
 
-       p {
-         font-size: 50px;
-       }
+  h1 {
+    font-size: 4vw;
+  }
 
-       .cadastro-container {
-         width: 900px;
-         padding-top: 20px;
-         text-align: center;
+  p {
+    font-size: 50px;
+  }
 
-
-
-         label {
-           font-size: 25px;
-           font-weight: 600;
-         }
-
-         input {
-           text-align: center;
-           min-height: 30px;
-           max-height: 100px;
-           border-radius: 5px;
-           border: none;
-           color: #000000;
-           margin: 10px;
-           padding: 5px;
-           border-radius: 15px;
-           width: 250px;
-           border: solid rgb(0, 140, 255) 2px;
-
-
-         }
+  .cadastro-container {
+    width: 900px;
+    padding-top: 20px;
+    text-align: center;
 
 
 
-         button {
-           background-color: #303030;
-           color: white;
-           padding: 20px 50px;
-           border: none;
-           border-radius: 20px;
-           cursor: pointer;
-           margin-top: 50px;
-           transition: background-color 0.3s ease;
-           border: solid #008cff 2px;
-           transition: transform 0.4s ease-in-out;
-           font-size: 18px;
+    label {
+      font-size: 25px;
+      font-weight: 600;
+    }
 
-         }
-
-         button:hover {
-           background-color: rgb(0, 63, 114);
-           color: #000000;
-           border: solid rgb(255, 255, 255) 2px;
-           transform: translateY(-5px);
+    input {
+      text-align: center;
+      min-height: 30px;
+      max-height: 100px;
+      border-radius: 5px;
+      border: none;
+      color: #000000;
+      margin: 10px;
+      padding: 5px;
+      border-radius: 15px;
+      width: 250px;
+      border: solid var(--Blue) 2px;
 
 
-         }
-       }
-     }
+    }
 
 
-     @media only screen and (max-width: 600px) {
-       .home-container {
-         flex-direction: column;
-         margin: 20% 5% 20% 5%;
-         max-height: 80vh;
+
+    button {
+      background-color: var(--Grey);
+      color: white;
+      padding: 20px 50px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 50px;
+      transition: background-color 0.3s ease;
+      border: solid var(--Blue) 2px;
+      transition: transform 0.4s ease-in-out;
+      font-size: 18px;
+
+    }
+
+    button:hover {
+      background-color: var(--Blue2);
+      color: #000000;
+      border: solid rgb(255, 255, 255) 2px;
+      transform: translateY(-5px);
 
 
-         h1 {
-           font-size: 50px;
-           padding: 5px;
-         }
+    }
+  }
+}
 
-         p {
-           font-size: 18px;
-         }
 
-         .cadastro-container {
+@media only screen and (max-width: 600px) {
+  .home-container {
+    flex-direction: column;
+    margin: 20% 5% 20% 5%;
+    max-height: 80vh;
 
-           label {
-             font-size: 20px;
-             font-weight: 800;
-           }
-         }
 
-       }
-     }
+    h1 {
+      font-size: 50px;
+      padding: 5px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .cadastro-container {
+
+      label {
+        font-size: 20px;
+        font-weight: 800;
+      }
+    }
+
+  }
+}

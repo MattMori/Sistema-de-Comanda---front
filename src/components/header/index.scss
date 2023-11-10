@@ -1,38 +1,49 @@
+@import url('../../index.scss');
+
 .Header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #303030;
-    border-bottom: solid rgb(0, 140, 255) 2px;
+    background-color: var(--Grey);
+    border-bottom: solid var(--Blue) 2px;
     width: 100%;
     overflow-x: hidden;
 
 
-    h1 {
-        display: inline-block;
-        text-decoration: none;
-        font-size: 36px;
-        padding: 20px;
-    }
-
-    p {
-        font-size: 20px;
-        padding-right: 23px;
-
-    }
 }
 
-.rotas {
+h1 {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 36px;
+    padding: 20px;
+}
+
+p {
+    font-size: 20px;
+    padding-right: 23px;
+
+}
+
+a {
+    text-decoration: none;
+
+
+}
+
+.Rotas {
     display: flex;
+    align-items: center;
+    text-align: center;
 }
- 
+
 
 @media only screen and (max-width: 600px) {
 
     .Header {
         flex-direction: column;
-        text-align: center;q
-        
+        text-align: center;
+
         h1 {
             font-size: 30px;
             padding: 5px;
@@ -42,7 +53,7 @@
             font-size: 18px;
             font-weight: 700;
             padding: 5px 0px 20px 10px;
-            
+
         }
     }
 }

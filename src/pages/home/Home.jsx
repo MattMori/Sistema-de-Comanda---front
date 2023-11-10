@@ -22,6 +22,11 @@ const Home = () => {
     try {
       const response = await SistemaService.criarComanda(comanda);
       console.log("Resposta do servidor:", response.data);
+      setComanda({
+        cpf: "",
+        numeroDaComanda: ''
+      });
+      alert('Comanda Associada com Sucesso')
     } catch (error) {
       console.error("Erro ao cadastrar o cliente:", error);
     }

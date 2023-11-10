@@ -1,5 +1,11 @@
+:root {
+    --Grey: #303030;
+    --Blue: #008cff;
+    --Blue2: #003f72;
+  }
+
 * {
-    color: #008cff;
+    color: var(--Blue);
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Isso ajuda a incluir padding e bordas no cálculo de largura/altura */
