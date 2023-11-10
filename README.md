@@ -22,3 +22,6 @@ BarSystem é um sistema de gerenciamento de comandas e bebidas para bares e rest
         Node.js com Express para criar o servidor e definir rotas da API.
         MongoDB como banco de dados para armazenar informações de clientes, comandas e bebidas.
         Mongoose para modelagem de dados.
+
+- Link do front hospedado: https://sistema-comanda-frontend.vercel.app/
+- Link do repositorio do BackEnd: https://github.com/MattMori/Sistema-de-Comanda---back
