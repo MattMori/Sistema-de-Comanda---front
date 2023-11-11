@@ -21,27 +21,27 @@ BarSystem é um sistema de gerenciamento de comandas e bebidas para bares e rest
 
 # funcionalidades e Capturas de tela:
 
--Tela de cadastro de comanda:
+ - Tela de cadastro de comanda:
 As comandas podem ser criadas e associadas a um cliente. Cada comanda possui um número único.
 
 ![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Comanda.png)
 
--Tela de cadastro de clientes:
+ - Tela de cadastro de clientes:
  Os clientes podem ser cadastrados no sistema com informações como nome, CPF, data de nascimento, telefone e e-mail.
 
 ![Alt text](public//Capturas%20de%20Tela/Tela%20-%20Cadastro.png)
 
--Tela do Bar:
+ - Tela do Bar:
 Os atendentes podem lançar bebidas na comanda de um cliente, associando a bebida à comanda pelo número da comanda e código da bebida.
 
 ![Alt text](public//Capturas%20de%20Tela/Tela%20-%20Bar.png)
 
--Tela do caixa de saida:
+ - Tela do caixa de saida:
 É possível consultar as informações de uma comanda, incluindo as bebidas lançadas e o valor total da comanda.
 
 ![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Caixa%20de%20Saida.png)
 
--Tela de cadastro de bebidas:
+ - Tela de cadastro de bebidas:
 As bebidas disponíveis no bar podem ser cadastradas com informações como código, nome, valor, ingredientes, etc.
 
 ![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Cadastrar%20bebida.png)
