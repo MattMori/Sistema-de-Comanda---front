@@ -25,3 +25,26 @@ BarSystem é um sistema de gerenciamento de comandas e bebidas para bares e rest
 
 - Link do front hospedado: https://sistema-comanda-frontend.vercel.app/
 - Link do repositorio do BackEnd: https://github.com/MattMori/Sistema-de-Comanda---back
+
+
+# Capturas de tela:
+
+-Tela de cadastro de comanda
+
+![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Comanda.png)
+
+-Tela de cadastro de clientes
+
+![Alt text](public//Capturas%20de%20Tela/Tela%20-%20Cadastro.png)
+
+-Tela do Bar
+
+![Alt text](public//Capturas%20de%20Tela/Tela%20-%20Bar.png)
+
+-Tela do caixa de saida
+
+![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Caixa%20de%20Saida.png)
+
+-Tela de cadastro de bebidas
+
+![Alt text](public/Capturas%20de%20Tela/Tela%20-%20Cadastrar%20bebida.png)
