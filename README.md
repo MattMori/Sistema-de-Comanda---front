@@ -6,7 +6,6 @@ BarSystem é um sistema de gerenciamento de comandas e bebidas para bares e rest
 
    - Frontend:
         React.js para a construção da interface do usuário.
-        Redux para gerenciamento de estado.
         Axios para fazer requisições HTTP para o backend.
         SCSS para estilização.
 
