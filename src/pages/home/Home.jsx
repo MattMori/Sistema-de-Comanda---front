@@ -1,4 +1,5 @@
 import { useState } from "react";
+import InputMask from "react-input-mask";
 import { SistemaService } from '../../api/sistemaService';
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -58,7 +59,9 @@ const Home = () => {
             <label>
               CPF:
               <br />
-              <input
+              <InputMask
+                mask="999.999.999-99"
+                maskChar=""
                 type="text"
                 name="cpf"
                 placeholder="Digite o CPF do cliente aqui"
