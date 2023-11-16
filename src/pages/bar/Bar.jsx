@@ -30,7 +30,7 @@ const Bar = () => {
             const response = await SistemaService.BebidaPeloCodigo(codigoDaBebida);
             console.log("Resposta da API (BebidaPeloCodigo):", response);
             setBebida(response.data.resposta);
-                
+
             Toast.fire({
                 icon: 'success',
                 title: 'Busca pela bebida feita com sucesso!'
@@ -58,7 +58,7 @@ const Bar = () => {
         try {
             const AdicionarBebida = await SistemaService.adicionarBebida(numeroDaComanda, codigoDaBebida);
             console.log("Resposta do servidor (Adicionar Bebida):", AdicionarBebida.data);
-            Swal.fire({
+            Toast.fire({
                 icon: 'success',
                 title: 'Bebida Adicionada com sucesso!',
                 showConfirmButton: false,
@@ -71,7 +71,7 @@ const Bar = () => {
             });
         } catch (error) {
             console.error("Erro ao Adicionar bebida:", error);
-            Swal.fire({
+            Toast.fire({
                 icon: 'error',
                 title: 'Erro ao Adicionar bebida',
                 text: 'Por favor verifique a comanda ou o numero da bebida foi digitado corretamente e tente novamente.'
