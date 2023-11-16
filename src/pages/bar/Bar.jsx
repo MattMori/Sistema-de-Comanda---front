@@ -13,29 +13,45 @@ const Bar = () => {
         Ingredientes: ""
     });
 
-    const fetchBebida = async () => {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
+      const fetchBebida = async () => {
         try {
             const response = await SistemaService.BebidaPeloCodigo(codigoDaBebida);
             console.log("Resposta da API (BebidaPeloCodigo):", response);
             setBebida(response.data.resposta);
-            Swal.fire({
+                
+            Toast.fire({
                 icon: 'success',
-                title: 'Busca pela bebida feita com sucesso!',
-                showConfirmButton: false,
-                timer: 1000
+                title: 'Busca pela bebida feita com sucesso!'
             });
-
+    
         } catch (error) {
             console.error("Erro ao buscar bebida pelo código:", error);
             setBebida({
                 nomeDaBebida: "",
                 valorDaBebida: 0,
                 Ingredientes: ""
-
+            });
+    
+            // Use Toast for the error message as well
+            Toast.fire({
+                icon: 'error',
+                title: 'Erro ao buscar bebida pelo código'
             });
         }
     };
-
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,7 +62,7 @@ const Bar = () => {
                 icon: 'success',
                 title: 'Bebida Adicionada com sucesso!',
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1500
             });
             setBebida({
                 nomeDaBebida: "",
@@ -68,6 +84,8 @@ const Bar = () => {
             await fetchBebida();
         }
     };
+
+
     return (
         <div className="Bar-container">
             <div className="bar-bebida-container">

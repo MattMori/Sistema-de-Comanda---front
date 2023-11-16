@@ -18,6 +18,18 @@ const CaixaSaida = () => {
     contagemDeEntrada: "", // Adicionado contagemDeEntrada
   });
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 2500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (name === "numeroDaComanda") {
@@ -45,16 +57,16 @@ const CaixaSaida = () => {
         telefone: infoCliente.data.resposta.telefone,
         contagemDeEntrada: infoCliente.data.resposta.contagemDeEntrada,
       });
-      Swal.fire({
+      Toast.fire({
         icon: 'success',
-        title: 'Comanda associada com sucesso!',
+        title: 'Comanda encontrada com sucesso!',
         showConfirmButton: false,
         timer: 1500
       });
 
     } catch (error) {
       console.error("Erro ao buscar informações da comanda:", error);
-      Swal.fire({
+      Toast.fire({
         icon: 'error',
         title: 'Erro ao Buscar a comanda',
         text: 'Por favor verifique o numero da comanda e tente novamente.'
@@ -76,7 +88,7 @@ const CaixaSaida = () => {
     try {
       const PagarComanda = await SistemaService.PagarComanda(clienteInfo.cpf);
 
-      Swal.fire({
+      Toast.fire({
         icon: 'success',
         title: 'Pagamento realizado com sucesso!',
         showConfirmButton: false,
@@ -97,7 +109,7 @@ const CaixaSaida = () => {
       setValorEntrada("");
     } catch (error) {
       console.error("Erro ao realizar o pagamento:", error);
-      Swal.fire({
+      Toast.fire({
         icon: 'error',
         title: 'Erro ao realizar o pagamento',
         text: 'Por favor, tente novamente.'

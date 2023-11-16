@@ -14,6 +14,18 @@ const CadastroClientes = () => {
         cpf: "",
     });
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCliente({
@@ -27,7 +39,7 @@ const CadastroClientes = () => {
         try {
             const response = await SistemaService.criarOuEditarCliente(cliente);
             console.log("Resposta do servidor:", response.data);
-            Swal.fire({
+            Toast.fire({
                 icon: 'success',
                 title: 'Cliente cadastrado com sucesso!',
                 showConfirmButton: false,
@@ -42,7 +54,7 @@ const CadastroClientes = () => {
             })
         } catch (error) {
             console.error("Erro ao cadastrar o cliente:", error);
-            Swal.fire({
+            Toast.fire({
                 icon: 'error',
                 title: 'Erro ao cadastrar o cliente',
                 text: 'Por favor verifique os dados e tente novamente.'

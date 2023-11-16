@@ -12,6 +12,18 @@ const CadastroBebida = () => {
         Ingredientes: "",
     });
 
+    const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2500,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBebida({
@@ -29,11 +41,9 @@ const CadastroBebida = () => {
                 valorDaBebida: precoParaEnviar
             });
             console.log("Resposta do servidor:", response.data);
-            Swal.fire({
+            Toast.fire({
                 icon: 'success',
                 title: 'bebida criada com sucesso!',
-                showConfirmButton: false,
-                timer: 1500
             });
             setBebida({
                 nomeDaBebida: "",
@@ -43,7 +53,7 @@ const CadastroBebida = () => {
             });
         } catch (error) {
             console.error("Erro ao cadastrar a bebida:", error);
-            Swal.fire({
+            Toast.fire({
                 icon: 'error',
                 title: 'Erro ao cadastrar a bebida',
                 text: 'Por favor verifique se os dados foram inseridos corretamente e tente novamente'

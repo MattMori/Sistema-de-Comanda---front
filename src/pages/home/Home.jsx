@@ -11,6 +11,18 @@ const Home = () => {
     numeroDaComanda: ''
   });
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     const cleanedValue = value.replace(/[^\d]/g, '');
@@ -32,18 +44,16 @@ const Home = () => {
       });
 
       // Exibe notificação de sucesso
-      Swal.fire({
+      Toast.fire({
         icon: 'success',
         title: 'Comanda associada com sucesso!',
-        showConfirmButton: false,
-        timer: 1500
       });
 
     } catch (error) {
       console.error("Erro ao cadastrar a comanda:", error);
 
       // Exibe notificação de erro
-      Swal.fire({
+      Toast.fire({
         icon: 'error',
         title: 'Erro ao associar a comanda',
         text: 'Cliente não encontrado com o CPF fornecido, verifique o CPF e tente novamente.'
