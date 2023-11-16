@@ -60,9 +60,7 @@ const CaixaSaida = () => {
       Toast.fire({
         icon: 'success',
         title: 'Comanda encontrada com sucesso!',
-        showConfirmButton: false,
-        timer: 1500
-      });
+        });
 
     } catch (error) {
       console.error("Erro ao buscar informações da comanda:", error);
@@ -91,8 +89,6 @@ const CaixaSaida = () => {
       Toast.fire({
         icon: 'success',
         title: 'Pagamento realizado com sucesso!',
-        showConfirmButton: false,
-        timer: 1500
       });
 
       setComandaInfo({

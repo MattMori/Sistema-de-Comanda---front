@@ -61,8 +61,7 @@ const Bar = () => {
             Toast.fire({
                 icon: 'success',
                 title: 'Bebida Adicionada com sucesso!',
-                showConfirmButton: false,
-                timer: 1500
+                
             });
             setBebida({
                 nomeDaBebida: "",

@@ -21,11 +21,11 @@ const CadastroClientes = () => {
         timer: 2500,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
         }
-      });
-      
+    });
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setCliente({
@@ -42,8 +42,6 @@ const CadastroClientes = () => {
             Toast.fire({
                 icon: 'success',
                 title: 'Cliente cadastrado com sucesso!',
-                showConfirmButton: false,
-                timer: 1500
             });
             setCliente({
                 nomeDoCliente: "",
@@ -58,7 +56,7 @@ const CadastroClientes = () => {
                 icon: 'error',
                 title: 'Erro ao cadastrar o cliente',
                 text: 'Por favor verifique os dados e tente novamente.'
-              });
+            });
         }
 
     };
