@@ -13,9 +13,11 @@ const Home = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const cleanedValue = value.replace(/[^\d]/g, '');
     setComanda({
       ...comanda,
-      [name]: value
+      [name]: cleanedValue
+      
     });
   };
 
@@ -44,7 +46,7 @@ const Home = () => {
       Swal.fire({
         icon: 'error',
         title: 'Erro ao associar a comanda',
-        text: 'Por favor verifique os dados e tente novamente.'
+        text: 'Cliente não encontrado com o CPF fornecido, verifique o CPF e tente novamente.'
       });
     }
   };

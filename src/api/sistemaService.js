@@ -86,8 +86,8 @@ export class SistemaService {
     }
 
     // Remove uma comanda pelo CPF do cliente
-    static RemoverComanda(cpf) {
-        return axios.delete(`${BASE_URL}comanda/cliente${cpf}/removerNumeroComanda`)
+    static PagarComanda(cpf) {
+        return axios.delete(`${BASE_URL}comanda/cliente/${cpf}/removerNumeroComanda`)
     }
 
 }

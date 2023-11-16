@@ -72,6 +72,43 @@ const CaixaSaida = () => {
     }
   };
 
+  const handlePagar = async () => {
+    try {
+      const PagarComanda = await SistemaService.PagarComanda(clienteInfo.cpf);
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Pagamento realizado com sucesso!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+      setComandaInfo({
+        bebidas: [],
+        totalDaComanda: 0,
+      });
+      setClienteInfo({
+        cpf: "",
+        nomeDoCliente: "",
+        telefone: "",
+        contagemDeEntrada: "",
+      });
+      setNumeroDaComanda("");
+      setValorEntrada("");
+    } catch (error) {
+      console.error("Erro ao realizar o pagamento:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro ao realizar o pagamento',
+        text: 'Por favor, tente novamente.'
+      });
+    }
+  };
+
+  const formatarCPF = (cpf) => {
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  };
+
   return (
     <div className="caixa-container">
       <div className="consulta-container">
@@ -105,12 +142,13 @@ const CaixaSaida = () => {
           <br />
           <button type="submit">Consultar</button>
         </form>
+        <button type="button" onClick={handlePagar}>Pagar</button>
       </div>
       <div className="dados">
         <div className="comanda-info">
           <h2>Informações da Comanda</h2>
           <h3>Informações do Cliente:</h3>
-          <p>CPF: {clienteInfo.cpf}</p>
+          <p>CPF: {formatarCPF(clienteInfo.cpf)}</p>
           <p>Nome: {clienteInfo.nomeDoCliente}</p>
           <p>Telefone: {clienteInfo.telefone}</p>
           <p>Contagem de Entrada: {clienteInfo.contagemDeEntrada}</p>
