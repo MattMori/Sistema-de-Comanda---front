@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SistemaService } from "../../api/sistemaService";
 
 import "./index.scss";
+import Swal from "sweetalert2";
 
 const CadastroBebida = () => {
     const [bebida, setBebida] = useState({
@@ -22,9 +23,18 @@ const CadastroBebida = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await SistemaService.criarBebida(bebida);
+            const precoParaEnviar = bebida.valorDaBebida.replace(/,/g, '.');
+            const response = await SistemaService.criarBebida({
+                ...bebida,
+                valorDaBebida: precoParaEnviar
+            });
             console.log("Resposta do servidor:", response.data);
-            alert("bebida cadastrada com sucesso")
+            Swal.fire({
+                icon: 'success',
+                title: 'bebida criada com sucesso!',
+                showConfirmButton: false,
+                timer: 1500
+            });
             setBebida({
                 nomeDaBebida: "",
                 codigoDaBebida: "",
@@ -33,14 +43,19 @@ const CadastroBebida = () => {
             });
         } catch (error) {
             console.error("Erro ao cadastrar a bebida:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao cadastrar a bebida',
+                text: 'Por favor verifique se os dados foram inseridos corretamente e tente novamente'
+            });
         }
     };
 
     return (
         <div className="bebida-container">
-        <div>
-            <h1>Cadastro de bebidas</h1>
-            <p>insira os dados da bebida que você quer cadastrar</p>
+            <div>
+                <h1>Cadastro de bebidas</h1>
+                <p>insira os dados da bebida que você quer cadastrar</p>
             </div>
             <div className="cadastro-container">
 
@@ -73,9 +88,8 @@ const CadastroBebida = () => {
                     </label>
                     <br />
                     <label>
-                        Preço da bebida: 
+                        Preço da bebida:
                         <br />
-
                         <input
                             type="text"
                             name="valorDaBebida"

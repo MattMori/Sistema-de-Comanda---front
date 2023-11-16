@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { SistemaService } from '../../api/sistemaService';
 import "./index.scss";
+import Swal from "sweetalert2";
+import InputMask from "react-input-mask";
 
 const CadastroClientes = () => {
 
@@ -25,7 +27,12 @@ const CadastroClientes = () => {
         try {
             const response = await SistemaService.criarOuEditarCliente(cliente);
             console.log("Resposta do servidor:", response.data);
-            alert("Cliente cadastrado com sucesso")
+            Swal.fire({
+                icon: 'success',
+                title: 'Cliente cadastrado com sucesso!',
+                showConfirmButton: false,
+                timer: 1500
+            });
             setCliente({
                 nomeDoCliente: "",
                 dataDeNascimento: "",
@@ -35,6 +42,11 @@ const CadastroClientes = () => {
             })
         } catch (error) {
             console.error("Erro ao cadastrar o cliente:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao cadastrar o cliente',
+                text: 'Por favor verifique os dados e tente novamente.'
+              });
         }
 
     };
@@ -90,7 +102,9 @@ const CadastroClientes = () => {
                     <label>
                         CPF:
                         <br />
-                        <input
+                        <InputMask
+                            mask="999.999.999-99"
+                            maskChar=""
                             type="text"
                             name="cpf"
                             placeholder="Digite o CPF do cliente aqui"

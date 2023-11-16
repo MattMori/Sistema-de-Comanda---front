@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SistemaService } from '../../api/sistemaService';
+import Swal from 'sweetalert2';
 import "./index.scss";
 
 const CaixaSaida = () => {
@@ -44,8 +45,20 @@ const CaixaSaida = () => {
         telefone: infoCliente.data.resposta.telefone,
         contagemDeEntrada: infoCliente.data.resposta.contagemDeEntrada,
       });
+      Swal.fire({
+        icon: 'success',
+        title: 'Comanda associada com sucesso!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+
     } catch (error) {
       console.error("Erro ao buscar informações da comanda:", error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro ao Buscar a comanda',
+        text: 'Por favor verifique o numero da comanda e tente novamente.'
+      });
       setComandaInfo({
         bebidas: [],
         totalDaComanda: 0,

@@ -44,7 +44,7 @@ const Home = () => {
       Swal.fire({
         icon: 'error',
         title: 'Erro ao associar a comanda',
-        text: 'Por favor, tente novamente.'
+        text: 'Por favor verifique os dados e tente novamente.'
       });
     }
   };

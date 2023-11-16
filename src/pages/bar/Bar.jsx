@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SistemaService } from '../../api/sistemaService';
 import { FaSearch } from 'react-icons/fa';
 import "./index.scss";
+import Swal from "sweetalert2";
 
 const Bar = () => {
     const [codigoDaBebida, setCodigoDaBebida] = useState("");
@@ -17,6 +18,13 @@ const Bar = () => {
             const response = await SistemaService.BebidaPeloCodigo(codigoDaBebida);
             console.log("Resposta da API (BebidaPeloCodigo):", response);
             setBebida(response.data.resposta);
+            Swal.fire({
+                icon: 'success',
+                title: 'Busca pela bebida feita com sucesso!',
+                showConfirmButton: false,
+                timer: 1000
+            });
+
         } catch (error) {
             console.error("Erro ao buscar bebida pelo código:", error);
             setBebida({
@@ -34,7 +42,12 @@ const Bar = () => {
         try {
             const AdicionarBebida = await SistemaService.adicionarBebida(numeroDaComanda, codigoDaBebida);
             console.log("Resposta do servidor (Adicionar Bebida):", AdicionarBebida.data);
-            alert("Bebida Adicionada com sucesso")
+            Swal.fire({
+                icon: 'success',
+                title: 'Bebida Adicionada com sucesso!',
+                showConfirmButton: false,
+                timer: 1000
+            });
             setBebida({
                 nomeDaBebida: "",
                 valorDaBebida: 0,
@@ -42,6 +55,11 @@ const Bar = () => {
             });
         } catch (error) {
             console.error("Erro ao Adicionar bebida:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro ao Adicionar bebida',
+                text: 'Por favor verifique a comanda ou o numero da bebida foi digitado corretamente e tente novamente.'
+              });
         }
     };
 
@@ -102,7 +120,7 @@ const Bar = () => {
                 </label>
                 <br />
                 <label>
-                    Ingredientes: {bebida && bebida.Ingredientes ? bebida.Ingredientes : "Ingrediente não disponível"}
+                    Ingredientes: <br /> {bebida && bebida.Ingredientes ? bebida.Ingredientes : "Ingrediente não disponível"}
                 </label>
             </div>
         </div>
