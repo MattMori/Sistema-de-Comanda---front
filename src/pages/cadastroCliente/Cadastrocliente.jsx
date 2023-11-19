@@ -28,7 +28,7 @@ const CadastroClientes = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        const cleanedValue = value.replace(/[^\d]/g, '');
+        const cleanedValue = name === 'cpf' ? value.replace(/[^\d]/g, '') : value;
         setCliente({
             ...cliente,
             [name]: cleanedValue
