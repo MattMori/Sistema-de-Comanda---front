@@ -129,7 +129,8 @@ const CadastroClientes = () => {
                     <label>
                         Telefone:
                         <br />
-                        <input
+                        <InputMask
+                            mask="(99) 99999-9999"
                             type="tel"
                             name="telefone"
                             placeholder="Digite o telefone do Cliente aqui"
