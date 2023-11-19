@@ -28,9 +28,10 @@ const CadastroClientes = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        const cleanedValue = value.replace(/[^\d]/g, '');
         setCliente({
             ...cliente,
-            [name]: value
+            [name]: cleanedValue
         });
     };
 
