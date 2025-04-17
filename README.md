@@ -1,46 +1,52 @@
 # BarSystem
 
-BarSystem é um sistema de gerenciamento de comandas e bebidas para bares e restaurantes. Este projeto foi desenvolvido como parte de um desafio para demonstrar habilidades de desenvolvimento web.
+**BarSystem** é um sistema completo de gerenciamento de comandas e controle de vendas de bebidas, desenvolvido para atender bares e restaurantes. O objetivo foi demonstrar habilidades em desenvolvimento fullstack através de uma aplicação prática e funcional.
 
 ## Tecnologias Utilizadas
 
-   - Frontend:
-        React.js para a construção da interface do usuário.
-        Axios para fazer requisições HTTP para o backend.
-        SCSS para estilização.
+### Frontend
 
-   - Backend:
-        Node.js com Express para criar o servidor e definir rotas da API.
-        MongoDB como banco de dados para armazenar informações de clientes, comandas e bebidas.
-        Mongoose para modelagem de dados.
+- **React.js** – Construção da interface do usuário.
+- **Axios** – Requisições HTTP para comunicação com o backend.
+- **SCSS** – Estilização modular e reutilizável.
 
-- Link do front hospedado: https://sistema-comanda-frontend.vercel.app/
-- Link do repositorio do BackEnd: https://github.com/MattMori/Sistema-de-Comanda---back
+### Backend
 
+- **Node.js + Express** – API RESTful com rotas para gerenciamento de clientes, bebidas e comandas.
+- **MongoDB** – Armazenamento de dados de forma não relacional.
+- **Mongoose** – Modelagem de dados e integração com MongoDB.
 
-# funcionalidades e Capturas de tela:
+## Links Úteis
 
- - Tela de cadastro de comanda:
-As comandas podem ser criadas e associadas a um cliente. Cada comanda possui um número único.
+- [Frontend (Vercel)](https://sistema-comanda-frontend.vercel.app/)
+- [Repositório do Backend](https://github.com/MattMori/Sistema-de-Comanda---back)
 
-![tela de Cadastro de comanda](public/Capturas%20de%20Tela/Tela%20-%20Comanda.png)
+## Funcionalidades
 
- - Tela de cadastro de clientes:
- Os clientes podem ser cadastrados no sistema com informações como nome, CPF, data de nascimento, telefone e e-mail.
+### Cadastro de Comandas  
+Crie comandas associadas a clientes. Cada comanda possui um número único para identificação.
 
-![ tela de Cadastro de clientes](public//Capturas%20de%20Tela/Tela%20-%20Cadastro.png)
+![Cadastro de Comanda](public/Capturas%20de%20Tela/Tela%20-%20Comanda.png)
 
- - Tela do Bar:
-Os atendentes podem lançar bebidas na comanda de um cliente, associando a bebida à comanda pelo número da comanda e código da bebida.
+### Cadastro de Clientes  
+Cadastre clientes com nome, CPF, data de nascimento, telefone e e-mail.
 
-![tela do bar](public//Capturas%20de%20Tela/Tela%20-%20Bar.png)
+![Cadastro de Clientes](public/Capturas%20de%20Tela/Tela%20-%20Cadastro.png)
 
- - Tela do caixa:
-É possível consultar as informações de uma comanda, incluindo as bebidas lançadas e o valor total da comanda.
+### Tela do Bar  
+Os atendentes podem lançar bebidas nas comandas usando o número da comanda e o código da bebida.
 
-![tela do caixa](public/Capturas%20de%20Tela/Tela%20-%20Caixa%20de%20Saida.png)
+![Tela do Bar](public/Capturas%20de%20Tela/Tela%20-%20Bar.png)
 
- - Tela de cadastro de bebidas:
-As bebidas disponíveis no bar podem ser cadastradas com informações como código, nome, valor, ingredientes, etc.
+### Tela do Caixa  
+Visualize os detalhes de cada comanda, incluindo bebidas lançadas e valor total.
 
-![tela de Cadastro de bebida](public/Capturas%20de%20Tela/Tela%20-%20Cadastrar%20bebida.png)
+![Tela do Caixa](public/Capturas%20de%20Tela/Tela%20-%20Caixa%20de%20Saida.png)
+
+### Cadastro de Bebidas  
+Registre bebidas com informações como código, nome, preço e ingredientes.
+
+![Cadastro de Bebidas](public/Capturas%20de%20Tela/Tela%20-%20Cadastrar%20bebida.png)
+
+## Contribuição
+Contribuições são bem-vindas! Caso tenha ideias de melhorias, correções ou novas funcionalidades, fique à vontade para abrir uma issue ou enviar um pull request.
